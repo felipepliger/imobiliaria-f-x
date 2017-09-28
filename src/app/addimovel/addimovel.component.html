@@ -1,0 +1,63 @@
+<app-head></app-head>
+
+<div class="jumbotron text-center topo">
+  <h1 class="display-3">Imobiliária f(x)</h1>
+  <hr class="my-4">
+  <p>Adicione O Seu Imóvel</p>
+</div>
+
+<div class="container-fluid">
+  <div class="jumbotron">
+
+    <div class="row">
+
+      <div class="col-xl-12 col-md-12 col-sm-12">
+
+        <form>
+          <div class="form-group">
+            <label for="">Título do Imóvel</label>
+            <input class="form-control" id="" placeholder="Título do Imóvel" [value]="titulo" #inputTitulo (input)="atualizaTitulo(inputTitulo.value)">
+          </div>
+          <div class="form-group">
+            <label for="">Rua/Avenida</label>
+            <input class="form-control" placeholder="Rua/Avenida" [value]="endereco" #inputEndereco (input)="atualizaEndereco(inputEndereco.value)">
+          </div>
+          <div class="form-group">
+            <label for="exampleSelect1">Selecione o Tipo do Imóvel:</label>
+            <select class="form-control" id="exampleSelect1" #selectTipo (change)="atualizaTipo(selectTipo.value)">
+                  <option value="">Selecione uma opção</option>
+                  <option value="House" selected="{{ tipo == 'casa' ? 'selected' : '' }}">Casa</option>
+                  <option value="Appartment" selected="{{ tipo == 'apartamento' ? 'selected' : '' }}">Apartamento</option>
+                  <option value="Commercial Room" selected="{{ tipo == 'sala comercial' ? 'selected' : '' }}">Sala Comercial</option>
+                </select>
+          </div>
+
+          <div class="form-group">
+            <label for="">Contato</label>
+            <input class="form-control" id="" placeholder="Contato" [value]="contato" #inputContato (input)="atualizaContato(inputContato.value)">
+          </div>
+
+          <div class="form-group">
+            <label for="">Valor</label>
+            <input class="form-control" id="" placeholder="Valor" [value]="valor" #inputValor (input)="atualizaValor(inputValor.value)">
+          </div>
+
+          <div class="form-group">
+            <label for="">URL das Imagens</label>
+            <input class="form-control" id="" placeholder="URL 1" [value]="imagem" #inputImagen (input)="atualizaImagen(inputImagen.value)">
+            <input class="form-control" id="" placeholder="URL 2">
+            <input class="form-control" id="" placeholder="URL 3">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleTextarea">Descrição:</label>
+            <textarea class="form-control" id="exampleTextarea" rows="4" [value]="descricao" #inputDescricao (input)="atualizaDescricao(inputDescricao.value)"></textarea>
+          </div>
+          <button type="button" class="btn btn-primary" (click)='enviarImovel()'>Enviar</button>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>

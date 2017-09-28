@@ -1,0 +1,50 @@
+<app-head></app-head>
+
+<div class="jumbotron text-center">
+  <h1 class="display-3">Imobiliária f(x)</h1>
+  <p>Seja Bem Vindo</p>
+  <hr class="my-4">
+  <p class="lead">
+    <a class="btn btn-primary btn-lg " href="/addimovel" role="button">Adicione O Seu Imóvel</a>
+  </p>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-xl-4 col-md-6 col-sm-8" *ngFor="let oferta of ofertas.result">
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" [src]="oferta.images[0].url" alt="oferta.images[0].desc">
+        <div class="card-body">
+          <h5 class="card-title">{{ oferta.name }}</h5>
+          <p class="card-text">{{ oferta.place[0].address }}</p>
+          <p class="card-text preco">R$ {{ oferta.value }}</p>
+          <a href="/ap0001" class="btn btn-primary">Ver Mais</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-4 col-md-6 col-sm-8">
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="..." alt="">
+        <div class="card-body">
+          <h4 class="card-title">INSIRA O SEU IMOVEL</h4>
+          <p class="card-text">Clique aqui e insira o seu imóvel aqui no nosso site.</p>
+          <a href="/addimovel" class="btn btn-primary">Clique Aqui</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-4 col-md-6 col-sm-8">
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="..." alt="">
+        <div class="card-body">
+          <h4 class="card-title">INSIRA O SEU IMOVEL</h4>
+          <p class="card-text">Clique aqui e insira o seu imóvel aqui no nosso site.</p>
+          <a href="/addimovel" class="btn btn-primary">Clique Aqui</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
